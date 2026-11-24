@@ -1,0 +1,888 @@
+{
+  "preprocessing": {
+    "raw_rows": 1012,
+    "raw_cols": 11,
+    "missing_before": {
+      "Age_years": 15,
+      "Neighborhood_Rating": 15
+    },
+    "duplicates": 12,
+    "imputed": {
+      "Age_years": {
+        "count": 15,
+        "method": "median",
+        "value": 12.0
+      },
+      "Neighborhood_Rating": {
+        "count": 15,
+        "method": "median",
+        "value": 6.0
+      }
+    },
+    "impossible_values": 0,
+    "clean_rows": 1000,
+    "numeric_vars": [
+      "Area_sqft",
+      "Bedrooms",
+      "Bathrooms",
+      "Age_years",
+      "Distance_to_City_km",
+      "Neighborhood_Rating",
+      "Parking_Spaces",
+      "Price_Lakhs"
+    ],
+    "categorical_vars": [
+      "Location_Type",
+      "Furnishing"
+    ],
+    "id_column": "House_ID",
+    "outliers": [
+      {
+        "variable": "Area_sqft",
+        "lower": 170.0,
+        "upper": 2570.0,
+        "outliers": 2
+      },
+      {
+        "variable": "Distance_to_City_km",
+        "lower": -13.650000000000004,
+        "upper": 40.35000000000001,
+        "outliers": 53
+      },
+      {
+        "variable": "Age_years",
+        "lower": -13.5,
+        "upper": 38.5,
+        "outliers": 27
+      },
+      {
+        "variable": "Price_Lakhs",
+        "lower": 33.33749999999998,
+        "upper": 155.03750000000002,
+        "outliers": 14
+      }
+    ],
+    "split": {
+      "train": 700,
+      "val": 150,
+      "test": 150
+    }
+  },
+  "statistics": {
+    "descriptive": [
+      {
+        "variable": "Area_sqft",
+        "mean": 1370.72,
+        "median": 1380.0,
+        "mode": 500.0,
+        "variance": 187709.391,
+        "std": 433.254,
+        "min": 500.0,
+        "q1": 1070.0,
+        "q3": 1670.0,
+        "max": 2780.0,
+        "skew": 0.042
+      },
+      {
+        "variable": "Bedrooms",
+        "mean": 2.547,
+        "median": 3.0,
+        "mode": 3.0,
+        "variance": 1.009,
+        "std": 1.004,
+        "min": 1.0,
+        "q1": 2.0,
+        "q3": 3.0,
+        "max": 5.0,
+        "skew": 0.221
+      },
+      {
+        "variable": "Bathrooms",
+        "mean": 2.481,
+        "median": 2.0,
+        "mode": 3.0,
+        "variance": 1.063,
+        "std": 1.031,
+        "min": 1.0,
+        "q1": 2.0,
+        "q3": 3.0,
+        "max": 4.0,
+        "skew": 0.013
+      },
+      {
+        "variable": "Age_years",
+        "mean": 13.777,
+        "median": 12.0,
+        "mode": 12.0,
+        "variance": 93.721,
+        "std": 9.681,
+        "min": 0.0,
+        "q1": 6.0,
+        "q3": 19.0,
+        "max": 45.0,
+        "skew": 1.069
+      },
+      {
+        "variable": "Distance_to_City_km",
+        "mean": 15.357,
+        "median": 11.8,
+        "mode": 8.6,
+        "variance": 138.814,
+        "std": 11.782,
+        "min": 1.0,
+        "q1": 6.6,
+        "q3": 20.1,
+        "max": 60.0,
+        "skew": 1.356
+      },
+      {
+        "variable": "Neighborhood_Rating",
+        "mean": 6.2,
+        "median": 6.0,
+        "mode": 6.0,
+        "variance": 2.623,
+        "std": 1.619,
+        "min": 1.0,
+        "q1": 5.0,
+        "q3": 7.0,
+        "max": 10.0,
+        "skew": -0.01
+      },
+      {
+        "variable": "Parking_Spaces",
+        "mean": 1.093,
+        "median": 1.0,
+        "mode": 1.0,
+        "variance": 0.523,
+        "std": 0.723,
+        "min": 0.0,
+        "q1": 1.0,
+        "q3": 2.0,
+        "max": 2.0,
+        "skew": -0.142
+      },
+      {
+        "variable": "Price_Lakhs",
+        "mean": 94.528,
+        "median": 93.95,
+        "mode": 77.6,
+        "variance": 550.129,
+        "std": 23.455,
+        "min": 15.0,
+        "q1": 78.975,
+        "q3": 109.4,
+        "max": 195.5,
+        "skew": 0.131
+      }
+    ],
+    "price": {
+      "mean": 94.5277,
+      "median": 93.95,
+      "std": 23.454829176988728,
+      "skew": 0.13095507380999588,
+      "kurtosis": 0.4673733941551319,
+      "min": 15.0,
+      "max": 195.5,
+      "shapiro_p": 0.037264304660711525
+    },
+    "by_location": [
+      {
+        "Location_Type": "Rural",
+        "houses": 197,
+        "mean_price": 80.9,
+        "median_price": 82.3,
+        "mean_area": 1571.93
+      },
+      {
+        "Location_Type": "Suburban",
+        "houses": 401,
+        "mean_price": 92.16,
+        "median_price": 92.1,
+        "mean_area": 1399.1
+      },
+      {
+        "Location_Type": "Urban",
+        "houses": 402,
+        "mean_price": 103.57,
+        "median_price": 103.55,
+        "mean_area": 1243.81
+      }
+    ],
+    "by_furnishing": [
+      {
+        "Furnishing": "Furnished",
+        "houses": 274,
+        "mean_price": 96.93
+      },
+      {
+        "Furnishing": "Semi-Furnished",
+        "houses": 420,
+        "mean_price": 93.62
+      },
+      {
+        "Furnishing": "Unfurnished",
+        "houses": 306,
+        "mean_price": 93.63
+      }
+    ],
+    "by_bedrooms": [
+      {
+        "Bedrooms": 1,
+        "houses": 160,
+        "mean_price": 71.97
+      },
+      {
+        "Bedrooms": 2,
+        "houses": 324,
+        "mean_price": 86.96
+      },
+      {
+        "Bedrooms": 3,
+        "houses": 354,
+        "mean_price": 100.72
+      },
+      {
+        "Bedrooms": 4,
+        "houses": 133,
+        "mean_price": 116.51
+      },
+      {
+        "Bedrooms": 5,
+        "houses": 29,
+        "mean_price": 127.06
+      }
+    ],
+    "sampling": {
+      "population_mean": 94.5277,
+      "srs_n": 100,
+      "srs_mean": 95.40700000000001,
+      "srs_se": 2.6076578193908615,
+      "srs_ci": [
+        90.2328411508278,
+        100.58115884917223
+      ],
+      "strat_n": 100,
+      "strat_mean": 95.915,
+      "clt_n": 30,
+      "clt_samples": 1000,
+      "clt_mean_of_means": 94.46992999999999,
+      "clt_std_of_means": 4.159307856850605,
+      "clt_theory_se": 4.280104682169974,
+      "clt_skew_of_means": 0.04548120505058938
+    },
+    "hypothesis": {
+      "group_a": "Urban",
+      "group_b": "Suburban",
+      "n_a": 402,
+      "n_b": 401,
+      "mean_a": 103.56791044776118,
+      "mean_b": 92.15910224438903,
+      "diff": 11.408808203372146,
+      "ci": [
+        8.370276352364268,
+        14.447340054380025
+      ],
+      "t": 7.370235457080224,
+      "df": 800.9289478872394,
+      "p": 4.2481298878740776e-13,
+      "cohens_d": 0.5201725994095282,
+      "alpha": 0.05,
+      "mannwhitney_p": 7.454110901726814e-12,
+      "levene_p": 0.6794076712669814,
+      "shapiro_p_a": 0.000979104155492824,
+      "shapiro_p_b": 0.635193404853645,
+      "decision": "Reject H0",
+      "anova_F": 74.77097632548461,
+      "anova_p": 5.5417396542694675e-31
+    }
+  },
+  "probability": {
+    "threshold_price": 100.0,
+    "threshold_area": 1500,
+    "n_high": 413,
+    "n": 1000,
+    "p_high": 0.413,
+    "p_large": 0.38,
+    "p_high_and_large": 0.26,
+    "p_high_given_large": 0.6842105263157895,
+    "p_high_given_not_large": 0.2467741935483871,
+    "p_urban": 0.402,
+    "p_high_given_urban": 0.5696517412935324,
+    "p_urban_given_high_bayes": 0.5544794188861986,
+    "p_urban_given_high_direct": 0.5544794188861986,
+    "independence_product": 0.15694,
+    "lln": [
+      {
+        "sample": 1,
+        "err_n10": 0.11299999999999999,
+        "err_n2000": 0.008000000000000007
+      },
+      {
+        "sample": 2,
+        "err_n10": 0.11299999999999999,
+        "err_n2000": 0.014999999999999958
+      },
+      {
+        "sample": 3,
+        "err_n10": 0.287,
+        "err_n2000": 0.0015000000000000013
+      }
+    ]
+  },
+  "regression": {
+    "corr_with_price": [
+      {
+        "variable": "Area_sqft",
+        "pearson_r": 0.6564071591040199,
+        "pearson_p": 2.722151534073507e-124,
+        "spearman_rho": 0.6470341588591441,
+        "spearman_p": 1.1064826805228813e-119
+      },
+      {
+        "variable": "Bedrooms",
+        "pearson_r": 0.6152331876253059,
+        "pearson_p": 3.431631065772839e-105,
+        "spearman_rho": 0.6113971934351856,
+        "spearman_p": 1.4885978348840046e-103
+      },
+      {
+        "variable": "Bathrooms",
+        "pearson_r": 0.5436921920366095,
+        "pearson_p": 5.337886041646498e-78,
+        "spearman_rho": 0.5440694236278787,
+        "spearman_p": 3.988320866916566e-78
+      },
+      {
+        "variable": "Neighborhood_Rating",
+        "pearson_r": 0.3901273265118891,
+        "pearson_p": 1.0647727484341563e-37,
+        "spearman_rho": 0.3548714606814428,
+        "spearman_p": 4.784774938660987e-31
+      },
+      {
+        "variable": "Distance_to_City_km",
+        "pearson_r": -0.37917357913473,
+        "pearson_p": 1.5235254208462158e-35,
+        "spearman_rho": -0.3544840178300426,
+        "spearman_p": 5.603501432187356e-31
+      },
+      {
+        "variable": "Age_years",
+        "pearson_r": -0.18469253451353385,
+        "pearson_p": 4.007695353710921e-09,
+        "spearman_rho": -0.16556141178845726,
+        "spearman_p": 1.3992960468852677e-07
+      },
+      {
+        "variable": "Parking_Spaces",
+        "pearson_r": 0.03486489074558114,
+        "pearson_p": 0.2706875528560244,
+        "spearman_rho": 0.043087901109877945,
+        "spearman_p": 0.17335977261176927
+      }
+    ],
+    "top_predictor_pairs": [
+      {
+        "a": "Bedrooms",
+        "b": "Bathrooms",
+        "r": 0.7868530695569863
+      },
+      {
+        "a": "Area_sqft",
+        "b": "Bedrooms",
+        "r": 0.768207382477972
+      },
+      {
+        "a": "Area_sqft",
+        "b": "Bathrooms",
+        "r": 0.612670028940135
+      }
+    ],
+    "simple": {
+      "intercept": 46.40537488244035,
+      "slope": 0.03558175049607843,
+      "train_r2": 0.44325179769685275,
+      "adj_r2": 0.4424541641691978,
+      "table": [
+        {
+          "variable": "Intercept",
+          "coef": 46.40537,
+          "std_err": 2.16601,
+          "t": 21.42438,
+          "p": 0.0,
+          "ci_low": 42.1527,
+          "ci_high": 50.65805
+        },
+        {
+          "variable": "Area_sqft",
+          "coef": 0.03558,
+          "std_err": 0.00151,
+          "t": 23.57347,
+          "p": 0.0,
+          "ci_low": 0.03262,
+          "ci_high": 0.03855
+        }
+      ],
+      "test": {
+        "MAE": 14.47777894441085,
+        "MSE": 341.2967994993213,
+        "RMSE": 18.4742198617241,
+        "R2": 0.45385577203811944,
+        "MAPE": 17.121644925306274
+      },
+      "val": {
+        "MAE": 14.366566192678125,
+        "MSE": 337.94902331931695,
+        "RMSE": 18.383389875627316,
+        "R2": 0.32452830869124294,
+        "MAPE": 20.305549159353355
+      }
+    },
+    "multiple": {
+      "train_r2": 0.9326939313257889,
+      "adj_r2": 0.9316178168557071,
+      "table": [
+        {
+          "variable": "Intercept",
+          "coef": 3.11851,
+          "std_err": 1.95398,
+          "t": 1.59598,
+          "p": 0.11095,
+          "ci_low": -0.71798,
+          "ci_high": 6.95499
+        },
+        {
+          "variable": "Area_sqft",
+          "coef": 0.03354,
+          "std_err": 0.00084,
+          "t": 39.82647,
+          "p": 0.0,
+          "ci_low": 0.03189,
+          "ci_high": 0.0352
+        },
+        {
+          "variable": "Bedrooms",
+          "coef": 3.58113,
+          "std_err": 0.45923,
+          "t": 7.79817,
+          "p": 0.0,
+          "ci_low": 2.67948,
+          "ci_high": 4.48278
+        },
+        {
+          "variable": "Bathrooms",
+          "coef": 2.44855,
+          "std_err": 0.36586,
+          "t": 6.6926,
+          "p": 0.0,
+          "ci_low": 1.73021,
+          "ci_high": 3.16688
+        },
+        {
+          "variable": "Age_years",
+          "coef": -0.4276,
+          "std_err": 0.02466,
+          "t": -17.33725,
+          "p": 0.0,
+          "ci_low": -0.47602,
+          "ci_high": -0.37917
+        },
+        {
+          "variable": "Distance_to_City_km",
+          "coef": -0.53744,
+          "std_err": 0.03735,
+          "t": -14.39103,
+          "p": 0.0,
+          "ci_low": -0.61076,
+          "ci_high": -0.46411
+        },
+        {
+          "variable": "Neighborhood_Rating",
+          "coef": 4.46191,
+          "std_err": 0.15019,
+          "t": 29.70752,
+          "p": 0.0,
+          "ci_low": 4.16702,
+          "ci_high": 4.75681
+        },
+        {
+          "variable": "Parking_Spaces",
+          "coef": 3.35899,
+          "std_err": 0.34266,
+          "t": 9.80261,
+          "p": 0.0,
+          "ci_low": 2.6862,
+          "ci_high": 4.03178
+        },
+        {
+          "variable": "Loc_Suburban",
+          "coef": 6.9816,
+          "std_err": 0.95468,
+          "t": 7.31302,
+          "p": 0.0,
+          "ci_low": 5.10716,
+          "ci_high": 8.85603
+        },
+        {
+          "variable": "Loc_Urban",
+          "coef": 19.13156,
+          "std_err": 1.2312,
+          "t": 15.53893,
+          "p": 0.0,
+          "ci_low": 16.7142,
+          "ci_high": 21.54893
+        },
+        {
+          "variable": "Furn_Semi",
+          "coef": 2.47499,
+          "std_err": 0.5447,
+          "t": 4.5438,
+          "p": 1e-05,
+          "ci_low": 1.40552,
+          "ci_high": 3.54446
+        },
+        {
+          "variable": "Furn_Full",
+          "coef": 5.04288,
+          "std_err": 0.61068,
+          "t": 8.25778,
+          "p": 0.0,
+          "ci_low": 3.84385,
+          "ci_high": 6.2419
+        }
+      ],
+      "std_coef": {
+        "Area_sqft": 14.625,
+        "Loc_Urban": 9.426,
+        "Neighborhood_Rating": 7.132,
+        "Distance_to_City_km": -6.015,
+        "Age_years": -4.04,
+        "Bedrooms": 3.601,
+        "Loc_Suburban": 3.431,
+        "Bathrooms": 2.507,
+        "Parking_Spaces": 2.435,
+        "Furn_Full": 2.21,
+        "Furn_Semi": 1.222
+      },
+      "test": {
+        "MAE": 5.004745800792299,
+        "MSE": 39.917203339961645,
+        "RMSE": 6.318006278879568,
+        "R2": 0.9361243638015888,
+        "MAPE": 5.17102112008909
+      },
+      "val": {
+        "MAE": 4.1302782888886815,
+        "MSE": 29.730115001630267,
+        "RMSE": 5.452532897803576,
+        "R2": 0.9405772774079587,
+        "MAPE": 4.717846932416615
+      },
+      "vif": {
+        "Area_sqft": 2.49,
+        "Bedrooms": 3.99,
+        "Bathrooms": 2.62,
+        "Age_years": 1.01,
+        "Distance_to_City_km": 1.18,
+        "Neighborhood_Rating": 1.06,
+        "Parking_Spaces": 1.11
+      },
+      "f_stat": 866.7237150475602,
+      "f_p": 0.0
+    }
+  },
+  "math": {
+    "linear_algebra": {
+      "vector": [
+        111.4,
+        130.6,
+        61.7,
+        92.9,
+        91.4,
+        104.7,
+        94.1
+      ],
+      "vector_shape": [
+        7
+      ],
+      "matrix_shape": [
+        7,
+        7
+      ],
+      "matrix_add_mean_first_row": [
+        1880.0,
+        4.0,
+        3.5,
+        14.5
+      ],
+      "dot_area_price_centered": 4728255.595714284,
+      "cosine_area_price": 0.6657715807218363,
+      "xtx_shape": [
+        8,
+        8
+      ],
+      "price_row1_features": [
+        2260.0,
+        5.0,
+        4.0,
+        27.0,
+        34.0,
+        5.0,
+        2.0
+      ],
+      "xtx_condition_number": 35.076084883218016
+    },
+    "gradient_descent": {
+      "alpha": 0.1,
+      "iterations": 2000,
+      "initial_cost": 4788.86627857143,
+      "cost_10": 588.3871811925599,
+      "cost_100": 18.6242675359225,
+      "final_cost": 18.24752377609228,
+      "normal_eq_cost": 18.247523776092248,
+      "max_weight_diff": 6.345137908425613e-07,
+      "test": {
+        "MAE": 5.004745769197669,
+        "MSE": 39.91720326971143,
+        "RMSE": 6.3180062733200435,
+        "R2": 0.9361243639140033,
+        "MAPE": 5.17102107766207
+      },
+      "weights_gd": {
+        "intercept": 95.055,
+        "Area_sqft": 14.614,
+        "Bedrooms": 3.598,
+        "Bathrooms": 2.505,
+        "Age_years": -4.037,
+        "Distance_to_City_km": -6.011,
+        "Neighborhood_Rating": 7.127,
+        "Parking_Spaces": 2.433,
+        "Loc_Suburban": 3.428,
+        "Loc_Urban": 9.419,
+        "Furn_Semi": 1.222,
+        "Furn_Full": 2.208
+      },
+      "weights_ne": {
+        "intercept": 95.055,
+        "Area_sqft": 14.614,
+        "Bedrooms": 3.598,
+        "Bathrooms": 2.505,
+        "Age_years": -4.037,
+        "Distance_to_City_km": -6.011,
+        "Neighborhood_Rating": 7.127,
+        "Parking_Spaces": 2.433,
+        "Loc_Suburban": 3.428,
+        "Loc_Urban": 9.419,
+        "Furn_Semi": 1.222,
+        "Furn_Full": 2.208
+      },
+      "cost_after_200_by_alpha": {
+        "0.001": 3179.68095640686,
+        "0.01": 106.99814479396842,
+        "0.1": 18.31258937543595,
+        "0.5": 18.247523939403234
+      }
+    }
+  },
+  "models": {
+    "tuning": {
+      "Random Forest": {
+        "params": {
+          "max_depth": null,
+          "min_samples_leaf": 1,
+          "n_estimators": 400
+        },
+        "cv_rmse": 8.913283602817007,
+        "combinations": 18
+      },
+      "Gradient Boosting": {
+        "params": {
+          "learning_rate": 0.1,
+          "max_depth": 2,
+          "n_estimators": 300
+        },
+        "cv_rmse": 7.1981978718896995,
+        "combinations": 8
+      }
+    },
+    "val_metrics": {
+      "Mean baseline": {
+        "MAE": 17.99421142857143,
+        "MSE": 510.2798420340137,
+        "RMSE": 22.589374538353507,
+        "R2": -0.019915916767731412,
+        "MAPE": 26.176171927074755
+      },
+      "Simple Linear Regression": {
+        "MAE": 14.366566192678105,
+        "MSE": 337.9490233193171,
+        "RMSE": 18.383389875627323,
+        "R2": 0.3245283086912427,
+        "MAPE": 20.30554915935337
+      },
+      "Multiple Linear Regression": {
+        "MAE": 4.130278288888709,
+        "MSE": 29.73011500163062,
+        "RMSE": 5.452532897803609,
+        "R2": 0.940577277407958,
+        "MAPE": 4.7178469324166095
+      },
+      "Random Forest": {
+        "MAE": 6.558771666666674,
+        "MSE": 68.12743656375034,
+        "RMSE": 8.253934611065825,
+        "R2": 0.8638310762130375,
+        "MAPE": 8.349973862200052
+      },
+      "Gradient Boosting": {
+        "MAE": 5.038896120244045,
+        "MSE": 42.61276784313971,
+        "RMSE": 6.527845574394335,
+        "R2": 0.9148282244356238,
+        "MAPE": 5.586467955640732
+      }
+    },
+    "test_metrics": {
+      "Mean baseline": {
+        "MAE": 19.617897142857146,
+        "MSE": 625.050684319728,
+        "RMSE": 25.00101366584419,
+        "R2": -0.0002081001803293514,
+        "MAPE": 23.470974806021548
+      },
+      "Simple Linear Regression": {
+        "MAE": 14.477778944410854,
+        "MSE": 341.2967994993217,
+        "RMSE": 18.474219861724112,
+        "R2": 0.4538557720381188,
+        "MAPE": 17.121644925306303
+      },
+      "Multiple Linear Regression": {
+        "MAE": 5.004745800792315,
+        "MSE": 39.917203339961986,
+        "RMSE": 6.3180062788795945,
+        "R2": 0.9361243638015881,
+        "MAPE": 5.171021120089095
+      },
+      "Random Forest": {
+        "MAE": 6.874189999999996,
+        "MSE": 87.15098963666632,
+        "RMSE": 9.335469438473158,
+        "R2": 0.8605407082016143,
+        "MAPE": 7.379546781190677
+      },
+      "Gradient Boosting": {
+        "MAE": 5.760605316105494,
+        "MSE": 52.49770311860347,
+        "RMSE": 7.24552987148652,
+        "R2": 0.9159930078994523,
+        "MAPE": 6.143318387019294
+      }
+    },
+    "selected": "Multiple Linear Regression",
+    "n_beat_baseline": 4,
+    "n_learned": 4,
+    "residual_summary": [
+      {
+        "model": "Mean baseline",
+        "mean_residual": -0.36061904761904945,
+        "std": 24.998412714054915,
+        "within_5": 11.333333333333332,
+        "within_10": 30.666666666666664,
+        "tendency": "unbiased"
+      },
+      {
+        "model": "Simple Linear Regression",
+        "mean_residual": -0.2560764759234331,
+        "std": 18.47244500161796,
+        "within_5": 23.333333333333332,
+        "within_10": 46.0,
+        "tendency": "unbiased"
+      },
+      {
+        "model": "Multiple Linear Regression",
+        "mean_residual": 1.1190021568956592,
+        "std": 6.218121702960215,
+        "within_5": 59.333333333333336,
+        "within_10": 89.33333333333333,
+        "tendency": "underestimates"
+      },
+      {
+        "model": "Random Forest",
+        "mean_residual": 1.3569866666666384,
+        "std": 9.236318358694403,
+        "within_5": 46.666666666666664,
+        "within_10": 76.0,
+        "tendency": "underestimates"
+      },
+      {
+        "model": "Gradient Boosting",
+        "mean_residual": 1.2205945100474953,
+        "std": 7.141978168592046,
+        "within_5": 50.0,
+        "within_10": 84.66666666666667,
+        "tendency": "underestimates"
+      }
+    ],
+    "residual_by_location": [
+      {
+        "Location_Type": "Rural",
+        "n": 34,
+        "mean_residual": 1.7,
+        "mape": 4.93
+      },
+      {
+        "Location_Type": "Suburban",
+        "n": 64,
+        "mean_residual": 0.67,
+        "mape": 4.96
+      },
+      {
+        "Location_Type": "Urban",
+        "n": 52,
+        "mean_residual": 1.29,
+        "mape": 5.59
+      }
+    ],
+    "residual_by_price_band": [
+      {
+        "band": "Low-priced",
+        "n": 50,
+        "mean_residual": -1.2
+      },
+      {
+        "band": "Mid-priced",
+        "n": 50,
+        "mean_residual": 1.32
+      },
+      {
+        "band": "High-priced",
+        "n": 50,
+        "mean_residual": 3.24
+      }
+    ],
+    "residual_stats": {
+      "mean": 1.1190021568956592,
+      "std": 6.218121702960215,
+      "shapiro_p": 0.7936641350405013,
+      "max_over": 15.117594586179152,
+      "max_under": 21.446389926189966,
+      "corr_resid_pred": 0.1239017928557312,
+      "within_5": 59.333333333333336,
+      "within_10": 89.33333333333333
+    },
+    "rf_importance": {
+      "Area_sqft": 0.5003,
+      "Distance_to_City_km": 0.2165,
+      "Neighborhood_Rating": 0.0908,
+      "Loc_Urban": 0.0543,
+      "Age_years": 0.0449,
+      "Bedrooms": 0.0435,
+      "Bathrooms": 0.0203,
+      "Loc_Suburban": 0.0114,
+      "Parking_Spaces": 0.0094,
+      "Furn_Full": 0.0046,
+      "Furn_Semi": 0.0041
+    }
+  }
+}
